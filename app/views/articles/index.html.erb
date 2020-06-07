@@ -5,14 +5,16 @@
     <tr>
       <th>Title</th>
       <th>Description</th>
-      <th>Actions</th>
+      <th colspan = '3'>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @articles.each do |article| %>
     <tr>
-      <td><%= link_to article.title, article %></td>
+      <td><%= article.title %></td>      
       <td><%= article.description %></td>
+      <td><%= link_to 'Show', article %></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
       <td><%= link_to 'Delete', article, method: :delete, data: {confirm: 'Shure?'} %></td>
     </tr>
     <% end %>
@@ -21,5 +23,6 @@
 
 <br>
 
-<%= link_to 'New Article', new_article_path %>
+<%= link_to 'New Article', new_article_path %> | 
+<%= link_to 'Home page', root_path %>
   
