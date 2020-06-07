@@ -12,14 +12,14 @@
 <%= form_with scope: :article, url: articles_path, local: true do |f| %>
 
   <p>
-    <%= f.label :title %><br />
+    <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label :descriptions %><br />
+    <%= f.label :descriptions %><br>
     <%= f.text_area :description %>
   </p>
 
-  <%= f.submit %>
+  <%= f.submit %> <spam> | </spam> <%= link_to 'Cancel', articles_path %> 
 
 <% end %>

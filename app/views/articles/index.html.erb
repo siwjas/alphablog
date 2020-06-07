@@ -9,12 +9,17 @@
     </tr>
   </thead>
   <tbody>
-    <% @articles.each do |a| %>
+    <% @articles.each do |article| %>
     <tr>
-      <td><%= a.title %></td>
-      <td><%= a.description %></td>
-      <td>Placeholder</td>
+      <td><%= link_to article.title, article %></td>
+      <td><%= article.description %></td>
+      <td><%= link_to 'Delete', article, method: :delete, data: {confirm: 'Shure?'} %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+<br>
+
+<%= link_to 'New Article', new_article_path %>
+  
