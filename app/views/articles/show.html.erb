@@ -1,12 +1,25 @@
-<div class="container">
-  <h1>Showing Articles details</h1>
 
-  <p><strong>Title: </strong> <%= @article.title %></p>
-  <p><strong>Description: </strong> <%= @article.description %></p>
+<h2 class="text-center mt-4"><%= @article.title %></h2>
 
-  <nav class="nav">
-    <div class='nav-link'><%= link_to 'Edit', edit_article_path %></div>
-    <div class='nav-link'><%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Shure?'} %></div>
-    <div class='nav-link'><%= link_to 'Back', articles_path %></div>
-  </nav>
+<div class="container">   
+  <div class="row justify-content-center">
+    <div class="col-8 mt-4">
+      <div class="card text-center shadow mb-4">
+        <div class="card-header font-italic">
+          by Wellington Almeida
+        </div>
+        <div class="card-body">
+          <div class="card-text text-justify"><%= simple_format(@article.description) %></div>              
+          <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-outline-info btn-sm' %> 
+          <%= link_to 'Back', articles_path, class: 'btn btn-outline-success btn-sm' %>               
+          <%= link_to 'Delete', article_path(@article), method: :delete, 
+              data: {confirm: 'Shure?'}, class: 'btn btn-outline-danger btn-sm' %>
+
+        </div>
+        <div class="card-footer text-muted">
+          <small>Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+        </div>
+      </div>        
+    </div>
+  </div>  
 </div>
