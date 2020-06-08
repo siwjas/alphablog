@@ -21,6 +21,10 @@
   font-weight: bold;
 }
 
+hr {
+  border: 1px solid #17A589;
+}
+
 #home-container {
   margin-top: 25px;
 }
@@ -46,4 +50,12 @@ body {
 #sticky-footer {
   flex-shrink: none;
 }
-  
+
+.form {
+  width: 60%;
+  margin: 15px auto;
+}
+
+p.input {
+  width: 450px;
+}

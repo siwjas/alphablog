@@ -1,8 +1,12 @@
-<h1>Showing Articles details</h1>
+<div class="container">
+  <h1>Showing Articles details</h1>
 
-<p><strong>Title: </strong> <%= @article.title %></p>
-<p><strong>Description: </strong> <%= @article.description %></p>
+  <p><strong>Title: </strong> <%= @article.title %></p>
+  <p><strong>Description: </strong> <%= @article.description %></p>
 
-<%= link_to 'Edit', edit_article_path %> | 
-<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Shure?'} %> | 
-<%= link_to 'Back', articles_path %>
+  <nav class="nav">
+    <div class='nav-link'><%= link_to 'Edit', edit_article_path %></div>
+    <div class='nav-link'><%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Shure?'} %></div>
+    <div class='nav-link'><%= link_to 'Back', articles_path %></div>
+  </nav>
+</div>
