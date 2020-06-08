@@ -1,16 +1,10 @@
 <div class='container'>
-  <div class="form">
-    <% if @article.errors.any? %>
-      <h2>The following erros prented the article from being saved!</h2>
-      <ol>
-        <% @article.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ol>
-    <% end %>
-    
+  <div class="form">    
     <div class="row justify-content-center">
       <div class="col-10">
+
+        <%= render 'shared/errors' %>
+        
         <%= form_with(model: @article, class: 'shadow-sm mb-3 p-3 bg-info rounded', local: true) do |f| %>
           <div class="form-group row">
             <%= f.label :title, class: 'col-sm-2 col-form-label text-white' %>
