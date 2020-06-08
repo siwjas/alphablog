@@ -25,18 +25,6 @@ hr {
   border: 1px solid #17A589;
 }
 
-#home-container {
-  margin-top: 25px;
-}
-
-.jumbotron {
-  background-image: asset-url('typing.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 425px;
-}
-
 html,
 body {
   height: 100%;
@@ -51,16 +39,14 @@ body {
   flex-shrink: none;
 }
 
-.form {
-  width: 60%;
-  margin: 15px auto;
+#home-container {
+  margin-top: 25px;
 }
 
-p.input {
-  width: 450px;
+.jumbotron {
+  background-image: asset-url('typing.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 425px;
 }
-
-// .link_button:hover {
-//   text-decoration: none;
-//   color: #FFF;
-// }
