@@ -1,0 +1,125 @@
+[33mcommit 05755fb74de813f98f2dbe42db8f085cbcd2a61b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Wellington <wjas@globo.com>
+Date:   Tue Jun 9 01:35:38 2020 -0300
+
+    Show user information on article
+
+[33mcommit 902875b6e7cbffb005986c56b7d6939055cdc319[m[33m ([m[1;31morigin/master[m[33m, [m[1;32muser-article-association[m[33m)[m
+Author: Wellington <wjas@globo.com>
+Date:   Tue Jun 9 01:16:29 2020 -0300
+
+    Add one-to-many association between user and articles from back end
+
+[33mcommit 5b8cc05abff3765bc47dd6f3b42ff6d009447168[m[33m ([m[1;32muser-validations[m[33m)[m
+Author: Wellington <wjas@globo.com>
+Date:   Tue Jun 9 00:22:01 2020 -0300
+
+    Add user validations
+
+[33mcommit 05b24cf7c04608da63b3131f3e17ccec8a335ba8[m[33m ([m[1;32mcreate-users-table-model[m[33m)[m
+Author: Wellington <wjas@globo.com>
+Date:   Mon Jun 8 22:48:22 2020 -0300
+
+    Add users talbe and user model
+
+[33mcommit 39d5f0e8f3025f0a76be1fc2c50f6c67517716b1[m[33m ([m[1;31mheroku/master[m[33m)[m
+Author: Wellington <wjas@globo.com>
+Date:   Mon Jun 8 19:33:41 2020 -0300
+
+    Clean up layout
+
+[33mcommit 5c33b05f8f49bd1ec62f85de571a0b49631b2917[m
+Author: Wellington <wjas@globo.com>
+Date:   Mon Jun 8 17:57:05 2020 -0300
+
+    Stylized alerts and errors messages
+
+[33mcommit 7a28d196483f332bcf830fe02661d3e472d05c5a[m
+Author: Wellington <wjas@globo.com>
+Date:   Mon Jun 8 14:53:23 2020 -0300
+
+    Stylized article forms
+
+[33mcommit 559e4889c6d384a263fb979c436e714f38ddf198[m
+Author: Wellington <wjas@globo.com>
+Date:   Mon Jun 8 01:07:14 2020 -0300
+
+    Stylized articles listing page
+
+[33mcommit 3741d109369d168eab829603005f0df22f587a46[m
+Author: Wellington <wjas@globo.com>
+Date:   Sun Jun 7 22:56:04 2020 -0300
+
+    custom bootstrap pages
+
+[33mcommit 3c2ad69df405aa53437e065b623ab37f2c1ad0c5[m
+Author: Wellington <wjas@globo.com>
+Date:   Sun Jun 7 21:03:00 2020 -0300
+
+    Bootstrap added
+
+[33mcommit d44eb20e961acb4164e19f388bd226bd63a13ae3[m
+Author: Wellington <wjas@globo.com>
+Date:   Sun Jun 7 14:43:00 2020 -0300
+
+    refactored code to apply the DRY concetp
+
+[33mcommit b2592f12cb9ae9b8b5a4ea81c687c76c5fb906cf[m
+Author: Wellington <wjas@globo.com>
+Date:   Sat Jun 6 23:53:24 2020 -0300
+
+    Added navigation links in all pages
+
+[33mcommit c30b08a408d6339daaeb0591b096e1964e40df60[m
+Author: Wellington <wjas@globo.com>
+Date:   Sat Jun 6 23:15:40 2020 -0300
+
+    Implemented destoy method for articles
+
+[33mcommit d805eb14f0e8217a162fb210f9ca4853ee6f2d73[m
+Author: Wellington <wjas@globo.com>
+Date:   Sat Jun 6 22:36:49 2020 -0300
+
+    Created edit article page
+
+[33mcommit 82e3679f6a15ca201be6a994b27449217427a6c0[m
+Author: Wellington <wjas@globo.com>
+Date:   Sat Jun 6 21:45:25 2020 -0300
+
+    Created new article page
+
+[33mcommit f8f8962ca079edf7d041b1674272e633e9600fc6[m
+Author: Wellington <wjas@globo.com>
+Date:   Thu Jun 4 01:28:08 2020 -0300
+
+    Implemented a list page of articles
+
+[33mcommit ba159488082aaa3201b7bf71771a1d30ca08551c[m
+Author: Wellington <wjas@globo.com>
+Date:   Wed Jun 3 10:47:02 2020 -0300
+
+    Show action implemented for Articles
+
+[33mcommit 3d710592855fe6053dda16b6e63a456b0fdcac0c[m
+Author: Wellington <wjas@globo.com>
+Date:   Wed Jun 3 03:36:19 2020 -0300
+
+    some validations of article
+
+[33mcommit c16ddbecc45fe32847bf4c8d1f835fd592104b0c[m
+Author: Wellington <wjas@globo.com>
+Date:   Wed Jun 3 00:54:16 2020 -0300
+
+    Create migrations to articles table
+
+[33mcommit dfaba7a7940a8ee06cfc4ba934daf19ec5f904ce[m
+Author: Wellington <wjas@globo.com>
+Date:   Wed Jun 3 00:27:21 2020 -0300
+
+    Make app ready to production
+
+[33mcommit ec72e03e8fa67c6c1ab449e0cc321398d6863afb[m
+Author: Wellington <wjas@globo.com>
+Date:   Wed Jun 3 00:21:28 2020 -0300
+
+    Initial commit
