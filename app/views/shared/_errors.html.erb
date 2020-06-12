@@ -1,10 +1,10 @@
 
-<% if @article.errors.any? %>
+<% if obj.errors.any? %>
   <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <h4 class="alert-heading">The following erros prented the article from being saved!</h4>
+    <h4 class="alert-heading">The following erros prented the obj from being saved!</h4>
     <hr>
     <ol>
-      <% @article.errors.full_messages.each do |msg| %>
+      <% obj.errors.full_messages.each do |msg| %>
         <li class='mb-o'><%= msg %></li>
       <% end %>
     </ol>

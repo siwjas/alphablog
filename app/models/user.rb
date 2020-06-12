@@ -6,7 +6,7 @@ class User < ApplicationRecord
                         length: { in: 3..25 }
   
   validates :password,  presence: true, 
-                        length { minimum: 6 }
+                        length: { minimum: 6 }
 
   VALID_EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   validates :email, presence: true, 
