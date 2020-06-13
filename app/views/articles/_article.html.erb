@@ -1,10 +1,14 @@
 <div class="container">
   <% @articles.each do |article| %>
     <div class="row  justify-content-md-center">
-      <div class="col-8  mt-4">
+      <div class="col-8  mt-3">
         <div class="card text-center shadow mb-2">
           <div class="card-header font-italic">
-            by: <spam class='text-muted'><%= article.user.username.capitalize if article.user %></spam>
+            <% if article.user %>
+              by: <spam class='text-muted'>
+                <%= link_to article.user.username.capitalize, user_path(article.user), class: 'text-muted' %>
+              </spam>
+            <% end %>
           </div>
           <div class="card-body">
             <h5 class="card-title"><%= link_to article.title, article_path(article), class: 'text-success' %></h5>
