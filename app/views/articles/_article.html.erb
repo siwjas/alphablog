@@ -4,7 +4,7 @@
       <div class="col-8  mt-4">
         <div class="card text-center shadow mb-2">
           <div class="card-header font-italic">
-            by: <spam class='text-muted'><%= article.user.username if article.user %></spam>
+            by: <spam class='text-muted'><%= article.user.username.capitalize if article.user %></spam>
           </div>
           <div class="card-body">
             <h5 class="card-title"><%= link_to article.title, article_path(article), class: 'text-success' %></h5>

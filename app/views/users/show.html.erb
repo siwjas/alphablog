@@ -1,10 +1,13 @@
 <div class="text-center mt-4">
-  <h1><%= @user.username %>'s profile</h1>
+  <h1><%= @user.username.capitalize %>'s profile</h1>
 
   <%= gravatar_for @user, size: 200 %>
+  <% if @user.articles.present? %>
+    <h3 class='mt-4'>Articles</h3>
 
-  <h3 class='mt-4'>Articles</h3>
-
-  <%= render 'articles/article' %>
+    <%= render 'articles/article' %>
+  <% else %>
+    <h3 class='mt-4'>No articles</h3>
+  <% end %>
   
 </div>
