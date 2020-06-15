@@ -5,7 +5,7 @@
         <div class="card text-center shadow mb-2">
           <div class="card-header font-italic">
             <% if article.user %>
-              by: <spam class='text-muted'>
+              by <spam class='text-muted'>
                 <%= link_to article.user.username.capitalize, user_path(article.user), class: 'text-muted' %>
               </spam>
             <% end %>

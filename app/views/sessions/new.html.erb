@@ -1,0 +1,41 @@
+<h1 class='text-center mt-4'>Sign up for Alpha Blog</h1>
+
+<div class='container'>
+  <div class="form mt-4">    
+    <div class="row justify-content-center">
+      <div class="col-6">
+        
+        <%= form_with(scope: :session, url: login_path, class: 'shadow-sm mb-3 p-3 bg-info rounded', local: true) do |f| %>
+              
+          <div class="form-group row">
+            <%= f.label :email, class: 'col-sm-2 col-form-label text-white' %>
+            <div class="col-sm-10">
+              <%= f.email_field :email, class: 'form-control shadow-sm rounded', 
+                  placeholder: 'Enter your email address' %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <%= f.label :password, class: 'col-sm-2 col-form-label text-white' %>
+            <div class="col-sm-10">
+              <%= f.password_field :password, class: 'form-control shadow-sm rounded',
+                  placeholder: 'Enter your password' %>
+            </div>
+          </div>
+    
+          <div class="form-group row justify-content-center">
+            <%= f.submit 'Log in', class: 'btn btn-outline-light btn-lg ml-2 shadow-sm' %>
+          </div>
+        <% end %>
+      </div>      
+    </div> 
+    
+    <div class="row justify-content-center">
+      <div class="col-sm-10 text-center">
+        <%= link_to '[ Cancel and return to Home page ]', root_path, class: 'text-info' %>
+      </div>
+    </div>
+    
+  </div>
+
+</div>

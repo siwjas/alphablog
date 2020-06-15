@@ -22,6 +22,22 @@
           <%= link_to 'View Articles', articles_path, class: 'dropdown-item' %>
         </div>
       </li>
+      <% if logged_in? %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <strong><%= current_user.username.capitalize %></strong>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to 'Your Profile', user_path(current_user), class: 'dropdown-item' %>                    
+        <div class="dropdown-divider"></div>
+          <%= link_to 'Logout', logout_path, method: :delete, class: 'dropdown-item text-danger' %>
+        </div>
+      </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'Log in', login_path, class: 'nav-link' %>
+        </li>
+      <% end %>  
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

@@ -6,7 +6,7 @@
     <div class="col-8 mt-4">
       <div class="card text-center shadow mb-4">
         <div class="card-header font-italic">
-          by: <spam class='text-muted'><%= @article.user.username if @article.user %></spam>
+          by <spam class='text-muted'><%= @article.user.username.capitalize if @article.user %></spam>
           <%= link_to gravatar_for(@article.user), user_path(@article.user) %> 
         </div>
         <div class="card-body">
