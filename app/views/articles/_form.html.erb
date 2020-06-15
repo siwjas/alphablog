@@ -25,11 +25,13 @@
             <%= f.submit class: 'btn btn-outline-light btn-lg ml-2 shadow-sm' %>    
           </div>
         <% end %>
+      </div>      
+    </div> 
+    <div class="row justify-content-center">
+      <div class="mb-2">
+        <strong><%= link_to '[ Cancel ]', :back, class: 'text-danger' %></strong>
       </div>
-      <div class="mb-3">
-        <%= link_to '[ Cancel and return to Article listing ]', articles_path, class: 'text-info' %>
-      </div>
-    </div>    
+    </div>   
   </div>
 
 </div>

@@ -10,17 +10,24 @@
           <%= link_to gravatar_for(@article.user), user_path(@article.user) %> 
         </div>
         <div class="card-body">
-          <div class="card-text text-justify"><%= simple_format(@article.description) %></div>              
-          <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-outline-info btn-sm' %> 
-          <%= link_to 'Back', articles_path, class: 'btn btn-outline-success btn-sm' %>               
-          <%= link_to 'Delete', article_path(@article), method: :delete, 
-              data: {confirm: 'Shure?'}, class: 'btn btn-outline-danger btn-sm' %>
-
+          <div class="card-text text-justify"><%= simple_format @article.description %></div>
+          <% if logged_in? && @article.user == current_user %>
+            <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-outline-info btn-sm' %>          
+            <%= link_to 'Delete', article_path(@article), method: :delete, 
+                data: {confirm: 'Shure?'}, class: 'btn btn-outline-danger btn-sm' %>
+          <% end %>
         </div>
         <div class="card-footer text-muted">
           <small>Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
         </div>
       </div>        
     </div>
-  </div>  
+  </div>
+  <div class="row justify-content-center">
+    <div class="mb-3">
+      <%= link_to '[ Return to Article listing ]', articles_path, class: 'text-info' %>
+    </div> 
+  </div>   
 </div>
+
+

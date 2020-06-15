@@ -4,7 +4,35 @@
   <%= will_paginate @users, :container => false %>
 </div>
 
-<%= render 'users' %>
+<div class="container">
+  <% @users.each do |user| %>  
+    <div class="row  justify-content-md-center">
+      <div class="col-8  mt-3">
+        <div class="card text-center shadow mb-2">
+          <div class="card-header font-italic">
+            <spam class='text-muted'><%= link_to user.username.capitalize, user, class: 'text-info' %></spam>
+          </div>
+          <div class="card-body">
+            <%= link_to gravatar_for(user, size: 150), user %>
+            <h5>
+              <p class="card-text mt-3">
+                <%= pluralize(user.articles.count, 'article') %>
+              </p>
+            </h5>            
+
+            <%= link_to 'View profile', user, class: 'btn btn-outline-success btn-sm' %>
+            <% if logged_in? && user == current_user %>
+              <%= link_to 'Edit profile', edit_user_path(user), class: 'btn btn-outline-info btn-sm' %>
+            <% end %>
+          </div>
+          <div class="card-footer text-muted">
+            <small>Joined <%= time_ago_in_words(user.created_at) %> ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <div class="flickr_pagination mb-3">
   <%= will_paginate @users, :container => false %>

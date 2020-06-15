@@ -14,11 +14,12 @@
             <h5 class="card-title"><%= link_to article.title, article_path(article), class: 'text-success' %></h5>
             <p class="card-text"><%= truncate(article.description, length: 128) %></p>
 
-            <%= link_to 'View', article_path(article), class: 'btn btn-outline-success btn-sm' %>              
-            <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-outline-info btn-sm' %>                
-            <%= link_to 'Delete', article_path(article), method: :delete, 
-                data: {confirm: 'Shure?'}, class: 'btn btn-outline-danger btn-sm' %>
-
+            <%= link_to 'View', article_path(article), class: 'btn btn-outline-success btn-sm' %>
+            <% if logged_in? && article.user == current_user %>
+              <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-outline-info btn-sm' %>                
+              <%= link_to 'Delete', article_path(article), method: :delete, 
+                  data: {confirm: 'Shure?'}, class: 'btn btn-outline-danger btn-sm' %>
+            <% end %>
           </div>
           <div class="card-footer text-muted">
             <small>Created <%= time_ago_in_words(article.created_at) %> ago, edited <%= time_ago_in_words(article.updated_at) %> ago</small>

@@ -2,12 +2,11 @@
   <h1><%= @user.username.capitalize %>'s profile</h1>
 
   <%= gravatar_for @user, size: 200 %>
-  
-  <div class='text-center mt-3'>
-    <%= link_to 'Edit your profile', edit_user_path(@user), class: 'btn btn-outline-info' %>
-  </div>
-
-  <% if @user.articles.any? %>
+  <% if logged_in? && @user == current_user %>      
+    <div class='text-center mt-3'>
+      <%= link_to 'Edit your profile', edit_user_path(@user), class: 'btn btn-outline-info' %>
+    </div>
+  <% end %>
     <h3 class='mt-3'>Articles</h3>
     <div class="flickr_pagination">
       <%= will_paginate @articles, :container => false %>
@@ -18,9 +17,4 @@
     <div class="flickr_pagination mb-3">
       <%= will_paginate @articles, :container => false %>
     </div>
-
-  <% else %>
-    <h3 class='mt-3'>No articles</h3>
-  <% end %>
-  
 </div>
