@@ -14,23 +14,27 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Articles
+          <i class="fas fa-file-alt"></i> <strong> Articles</strong> 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to 'Create new Article', new_article_path, class: 'dropdown-item' %>                    
+          <% if logged_in? %>
+            <%= link_to 'Create new Article', new_article_path, class: 'dropdown-item' %>
+          <% end %>
+          <%= link_to 'View Articles', articles_path, class: 'dropdown-item' %>                           
         <div class="dropdown-divider"></div>
-          <%= link_to 'Articles listing', articles_path, class: 'dropdown-item' %>
+          <%= link_to 'Something else', '#', class: 'dropdown-item' %>
         </div>
       </li>
       <% if logged_in? %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <strong><%= current_user.username.capitalize %></strong>
+        <i class="fas fa-user"></i> <strong><%= current_user.username.capitalize %></strong>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to 'Your Profile', user_path(current_user), class: 'dropdown-item' %>                    
+          <%= link_to 'View your Profile', user_path(current_user), class: 'dropdown-item' %>
+          <%= link_to 'Edit your Profile', edit_user_path(current_user), class: 'dropdown-item' %>  
         <div class="dropdown-divider"></div>
-          <%= link_to content_tag(:strong, ('Logout')), logout_path, method: :delete, class: 'dropdown-item text-danger' %>
+          <%= link_to content_tag(:strong, "Logout"), logout_path, method: :delete, class: 'dropdown-item text-danger' %>
         </div>
       </li>
       <% else %>
