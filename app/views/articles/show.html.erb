@@ -11,7 +11,7 @@
         </div>
         <div class="card-body">
           <div class="card-text text-justify"><%= simple_format @article.description %></div>
-          <% if logged_in? && @article.user == current_user %>
+          <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
             <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-outline-info btn-sm' %>          
             <%= link_to 'Delete', article_path(@article), method: :delete, 
                 data: {confirm: 'Shure?'}, class: 'btn btn-outline-danger btn-sm' %>
@@ -20,7 +20,7 @@
         <div class="card-footer text-muted">
           <small>Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
         </div>
-      </div>        
+      </div>
     </div>
   </div>
   <div class="row justify-content-center">

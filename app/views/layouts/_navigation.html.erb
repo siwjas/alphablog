@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <%= link_to 'Alpha Blog', root_path, class: 'navbar-brand', id: 'logo' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
       <% if logged_in? %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fas fa-user"></i> <strong><%= current_user.username.capitalize %></strong>
+        <i class="fas fa-user"></i> <strong><%= current_user.username.capitalize %> <%= '[Adm]' if current_user.admin? %></strong>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <%= link_to 'View your Profile', user_path(current_user), class: 'dropdown-item' %>

@@ -21,8 +21,18 @@
             </h5>            
 
             <%= link_to 'View profile', user, class: 'btn btn-outline-success btn-sm' %>
-            <% if logged_in? && user == current_user %>
-              <%= link_to 'Edit profile', edit_user_path(user), class: 'btn btn-outline-info btn-sm' %>
+            <% if logged_in? %>
+              <% if user == current_user %>
+                <%= link_to 'Edit profile', edit_user_path(user), class: 'btn btn-outline-info btn-sm' %>
+              <% end %>
+              <% if current_user.admin? %>
+                <%= link_to 'Delete user', user_path(user), 
+                                           method: :delete, 
+                                           class: 'btn btn-outline-danger btn-sm',
+                                           data: { 
+                                                  confirm: 'Are you shure you want delete this user and all associated articles?' 
+                                                  } %>
+              <% end %>
             <% end %>
           </div>
           <div class="card-footer text-muted">
