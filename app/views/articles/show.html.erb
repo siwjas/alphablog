@@ -19,6 +19,12 @@
         </div>
         <div class="card-footer text-muted">
           <small>Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+
+          <small> | Categories: 
+            <% @article.categories.each do |c| %>
+              <%= c.name %>
+            <% end %>
+          </small>
         </div>
       </div>
     </div>

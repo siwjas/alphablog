@@ -22,7 +22,10 @@
             <% end %>
           </div>
           <div class="card-footer text-muted">
-            <small>Created <%= time_ago_in_words(article.created_at) %> ago, edited <%= time_ago_in_words(article.updated_at) %> ago</small>
+            <small>
+              Created <%= time_ago_in_words(article.created_at) %> ago, 
+              edited <%= time_ago_in_words(article.updated_at) %> ago
+            </small>
           </div>
         </div>
       </div>
