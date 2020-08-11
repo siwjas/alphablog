@@ -10,7 +10,9 @@
               </spam>
             <% end %>
             <div class="mt-2">
-              <%= render article.categories if article.categories %>
+            <% if article.categories.any? %>
+              <%= render article.categories %>
+            <% end %>
             </div>
           </div>
           <div class="card-body">
