@@ -14,21 +14,32 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-file-alt"></i> <strong> Articles</strong> 
+        <i class="bi bi-file-earmark-text"></i> <strong> Articles </strong> 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% if logged_in? %>
             <%= link_to 'Create new Article', new_article_path, class: 'dropdown-item' %>
           <% end %>
-          <%= link_to 'View Articles', articles_path, class: 'dropdown-item' %>                           
+          <%= link_to 'View Articles', articles_path, class: 'dropdown-item' %>
         <div class="dropdown-divider"></div>
           <%= link_to 'Something else', '#', class: 'dropdown-item' %>
         </div>
       </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="bi bi-collection"></i> <strong> Categories </strong> 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <% if logged_in? && current_user.admin? %>
+            <%= link_to 'Create new Category', new_category_path, class: 'dropdown-item' %>
+          <% end %>
+          <%= link_to 'View Categories', categories_path, class: 'dropdown-item' %>
+      </li>
       <% if logged_in? %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fas fa-user"></i> <strong><%= current_user.username.capitalize %> <%= '[Adm]' if current_user.admin? %></strong>
+        <i class="bi bi-person-circle"></i> <strong><%= current_user.username.capitalize %></strong>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <%= link_to 'View your Profile', user_path(current_user), class: 'dropdown-item' %>
