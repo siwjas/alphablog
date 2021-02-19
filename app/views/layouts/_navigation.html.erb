@@ -39,7 +39,12 @@
       <% if logged_in? %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="bi bi-person-circle"></i> <strong><%= current_user.username.capitalize %></strong>
+        
+        <% if current_user.admin? %> 
+          <i class="bi bi-shield-exclamation"></i> <strong> <%= current_user.username.capitalize %></strong>
+        <% else %> 
+          <i class="bi bi-person-circle"></i> <strong> <%= current_user.username.capitalize %></strong> 
+        <% end %>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <%= link_to 'View your Profile', user_path(current_user), class: 'dropdown-item' %>
